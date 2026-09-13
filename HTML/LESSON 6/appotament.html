@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> doctor's appointment </h1>
+    <p>fill the form below to book your appointment</p>
+    <hr>
+
+    <form>
+
+        <fieldset>
+            <legend> personnal details</legend>
+
+            <lable>your name</lable>
+            <input type="text" id="name" placeholder="enter your full name"><br><br>
+
+            <label>patitent ID</label><br>
+            <input type="password" id="pid" placeholder="your secret ID"><br><br>
+
+            <lable>date of birth</lable><br>
+            <input type="date" id="dob"><br>
+        </fieldset>
+        <fieldset>
+        <lable>choose your doctor</lable><br>
+        <select id="doctor">
+            <option value="">--select a doctor</option>
+            <option value="dr-ray"> DR.Ray -general</option>
+            <option value="dr-lee"> DR-Lee- teeth</option>
+            <option value="dr-sam"> DR-SAM-EYES</option>
+            </select><br><br>
+            <label>why are you visting?</label>
+            <input type="radio" name="reason" value="fever">fever<br>
+            <input type="radio" name="reason" value="cold">cold<br>
+            <input type="radio" name="reason" value="checkup">checkup<br>
+            <input type="radio" name="reason" value="tooth">tooth pain <br>
+
+            <label>any notes for the doctor</label><br>
+            <textarea id="notes" rows="3" cols="35" placeholder="e.g. i have a sore throat"></textarea>
+            <br>
+
+        </feildset>
+    <br>
+
+    <fieldset>
+        <legend>preferred visit day</legend>
+
+        <input type="checkbox" value="mon"> monday<br>
+        <input type="checkbox" value="wed"> wednesday<br>
+        <input type="checkbox" value="fri"> friday<br>
+
+    </fieldset>
+    <br>
+    <input type="submit" value="book my appointment">
+    
+    </form>
+</body>
+</html>
