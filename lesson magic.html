@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>My magic world lab </h1>
+   <p class="text-muted mb-4">Discover types,switch them,find and swap words, and catch sneaky errors!</p>
+   <div class="card mb-4"><div class="card-body">
+<h3 >What type is it?</h3>
+<button onclick="checkTypes()">Reveal the Types!</button>
+<div id="typeResult"></div>
+   </div>
+   </div>
+
+   <h3 >Switch the Type</h3>
+   <input id="numIn">
+   <button onclick="toStr()">Turn into Text</button>
+   <button onclick="toNum()">Turn into Number</button>
+   <div id="convResult">Type a number above then press a button!</div>
+
+   <h3>Find and Swap o Word</h3>
+   <input id="findW">
+   <input id="swapW">
+   <button onclick="doSearch()">Find It!</button>
+   <button onclick="doReplace()">Swap It!</button>
+   <div id="srREsult"></div>
+
+   <h3>Catch the Mistake</h3>
+   <input id="divIn">
+   <button onclick="trySafe()">Try It!</button>
+   <div id="errResult">Type a number or something silly and see what happens!</div>
+
+   <script>
+    var sen = "The dragon flew over the big castel.";
+    function checkTypes() {
+        document.getElementById("typeResult").innerText =
+"score 42     -type:" + typeof 42 + "\n" +
+"Name 'Alex'    -type:" + typeof "Alex" + "\n" +
+"Game over true   -type:" + typeof true;
+    }
+function toStr() {
+    var v = document.getElementById("numIn").value;
+    document.getElementById("convResult").innerHTML = "String(" + v + ") = '" + String(v) + "' — now it is a: " + typeof String(v);
+}
+function toNum() {
+    var v = document.getElementById("numIn").value;
+    document.getElementById("convResult").innerHTML = "Number(" + v + ") = '" + Number(v) + "' — now it is a: " + typeof Number(v);
+}
+
+function doSearch() {
+    var w = document.getElementById("findW").value;
+    var p = sen.search()
+}
+   </script>
+</body>
+</html>
