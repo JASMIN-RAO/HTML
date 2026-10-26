@@ -26,7 +26,7 @@
    <input id="swapW">
    <button onclick="doSearch()">Find It!</button>
    <button onclick="doReplace()">Swap It!</button>
-   <div id="srREsult"></div>
+   <div id="srResult"></div>
 
    <h3>Catch the Mistake</h3>
    <input id="divIn">
@@ -35,25 +35,64 @@
 
    <script>
     var sen = "The dragon flew over the big castel.";
+
     function checkTypes() {
         document.getElementById("typeResult").innerText =
-"score 42     -type:" + typeof 42 + "\n" +
-"Name 'Alex'    -type:" + typeof "Alex" + "\n" +
-"Game over true   -type:" + typeof true;
+            "score 42     -type:" + typeof 42 + "\n" +
+            "Name 'Alex'    -type:" + typeof "Alex" + "\n" +
+            "Game over true   -type:" + typeof true;
     }
-function toStr() {
-    var v = document.getElementById("numIn").value;
-    document.getElementById("convResult").innerHTML = "String(" + v + ") = '" + String(v) + "' — now it is a: " + typeof String(v);
-}
-function toNum() {
-    var v = document.getElementById("numIn").value;
-    document.getElementById("convResult").innerHTML = "Number(" + v + ") = '" + Number(v) + "' — now it is a: " + typeof Number(v);
-}
 
-function doSearch() {
-    var w = document.getElementById("findW").value;
-    var p = sen.search()
-}
+    function toStr() {
+        var v = document.getElementById("numIn").value;
+        document.getElementById("convResult").innerHTML = "String(" + v + ") = '" + String(v) + "' — now it is a: " + typeof String(v);
+    }
+
+    function toNum() {
+        var v = document.getElementById("numIn").value;
+        document.getElementById("convResult").innerHTML = "Number(" + v + ") = '" + Number(v) + "' — now it is a: " + typeof Number(v);
+    }
+
+    function doSearch() {
+        var w = document.getElementById("findW").value;
+        var p = sen.search(w);
+        var out = document.getElementById("srResult");
+
+        if (p === -1) {
+            out.innerHTML = "'" + w + "' is not in the sentence.";
+        } else {
+            out.innerHTML = "'" + w + "' was found at index " + p + ".";
+        }
+    }
+
+    function doReplace() {
+        var w = document.getElementById("findW").value;
+        var r = document.getElementById("swapW").value;
+        var out = document.getElementById("srResult");
+
+        if (w === "") {
+            out.innerHTML = "Type a word to replace first.";
+            return;
+        }
+
+        var updated = sen.replace(w, r);
+        out.innerHTML = "Updated sentence: " + updated;
+    }
+
+    function trySafe() {
+        var value = document.getElementById("divIn").value;
+        var out = document.getElementById("errResult");
+
+        try {
+            var num = Number(value);
+            if (Number.isNaN(num)) {
+                throw new Error("That is not a valid number.");
+            }
+            out.innerHTML = "Valid number: " + num;
+        } catch (e) {
+            out.innerHTML = "Error: " + e.message;
+        }
+    }
    </script>
 </body>
 </html>
