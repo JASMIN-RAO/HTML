@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    var ch = prompt("Enter your choice: 1. Rectangle 2. Triangle 3. Circle 4. Parallelogram");
+    var area;
+
+    if (ch === "1") {
+        var length = Number(prompt("Enter the length of the rectangle"));
+        var breadth = Number(prompt("Enter the breadth of the rectangle"));
+        area = length * breadth;
+        alert("The area of the rectangle is " + area);
+    } else if (ch === "2")  {
+        var base = Number(prompt("Enter the base of the trisngle"));
+        var height = Number(prompt("Enter the height of the triangle"));
+        area = base * height *1/2;
+        alert("The area of the triangle is " + area);
+    } else if (ch == "3")  {
+        var radius = Number(prompt("Enter the radius of the cricle"));
+        area = radius * 22/7 * radius;
+        alert("The area of the circle is " + area);
+    } else if (ch == "4") {
+        var base = Number(prompt("Enter the base of the parellelogram"));
+        var height = Number(prompt("Enter the height of the parellelogram"));
+        area = base * height *1/2;
+        alert("The area of the parellelogram is " + area);
+    } 
+   </script> 
+</body>
+</html>
