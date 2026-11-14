@@ -18,7 +18,7 @@
 
      <h3> Lable Every Play Count</h3>
      <button onclick="addLabel()">Add Plays Label</button>
-     <div id="lableResult"></div>
+     <div id="labelResult"></div>
      <script>
         var songs = ["Zoom","Bounce","Glow","Rush","Spark"];
         var plays = [320,85,210,50,175];
@@ -37,8 +37,8 @@
             function sortMost() {plays.sort(function(a,b){return b-a});
             document.getElementById("countResult").innerHTML="Most played first:" + plays;}
 
-            function addLabel()  {var 1 = plays.map(function(c) {return c+" plays";});
-        document.getElementById("lableResult").innerHTML= "Lableled:" + 1;}
+            function addLabel()  {var  l = plays.map(function(c) {return c+" plays";});
+        document.getElementById("labelResult").innerHTML= "Lableled:" + l;}
      </script>
 </body>
 </html>
